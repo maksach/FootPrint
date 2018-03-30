@@ -1,22 +1,60 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Expo from 'expo';
+import { StackNavigator } from 'react-navigation';
+
+class HomeScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Home',
+  };
+  render() {
+    const { navigate } = this.props.navigation;
+    return (
+      <View style = { styles.container }>
+        <Text
+          onPress = { ()=> navigate('Profile') }> Navigate to Profile
+        </Text>
+      </View>
+    );
+  }
+}
+
+class ProfileScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Profile',
+  };
+  render() {
+    const { navigate } = this.props.navigation;
+    return (
+      <View style = { styles.container }>
+        <Text
+          onPress= { ()=> navigate('Home') }> Navigate to Home
+        </Text>
+      </View>
+    );
+  }
+}
+
+const NavigationApp = StackNavigator({
+  Home: { screen: HomeScreen },
+  Profile: { screen: ProfileScreen },
+  }, {
+    navigationOptions: {
+      headerStyle: {
+        marginTop: Expo.Constants.statusBarHeight
+      }
+    }
+})
 
 export default class App extends React.Component {
   render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
+    return <NavigationApp />;
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
