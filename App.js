@@ -21,19 +21,22 @@ class SignInScreen extends React.Component {
     this.setState({
       authenticating: true,
     });
+    const { navigate } = this.props.navigation;
+    navigate('Home');
   }
 
   renderCurrentState() {
-    if(this.state.authenticating) {
-      return (
-        <View style = { styles.form }>
-          <ActivityIndicator size='large' />
-        </View>
-      )
-    }
+    // if(this.state.authenticating) {
+    //   return (
+    //     <View style = { styles.form }>
+    //       <ActivityIndicator size='large' />
+    //     </View>
+    //   )
+    // }
 
     return (
       <View style = { styles.form }>
+        <Text style = { styles.title } >FootPrint</Text>
         <Input
           placeholder = 'Enter your email...'
           label = 'Email'
@@ -47,7 +50,8 @@ class SignInScreen extends React.Component {
           onChangeText = { password => this.setState( { password } )}
           value = { this.state.password }
         />
-        <Button onPress = { () => this.onPressSignIn() } >Sign In</Button>
+        <Button onPress = { () => this.onPressSignIn() } >Log In</Button>
+        <Button onPress = { () => this.onPressSignIn() } >Sign Up</Button>
       </View>
     )
   }
@@ -120,8 +124,9 @@ const styles = StyleSheet.create({
     padding: 5,
     paddingBottom: 0,
     color: '#333',
-    fontSize: 17,
+    fontSize: 35,
     fontWeight: '700',
     width: '100%',
-  }
+    textAlign: 'center',
+  },
 });
