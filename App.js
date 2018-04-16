@@ -7,10 +7,16 @@ import { Input } from './components/Input';
 import { Button } from './components/Button';
 import { HomeScreen } from './screens/HomeScreen';
 import { SignInScreen } from './screens/SignInScreen';
+import { CalendarScreen } from './screens/CalendarScreen';
+import { SuggestionsScreen } from './screens/SuggestionsScreen';
+import { SettingsScreen } from './screens/SettingsScreen';
 
 const NavigationApp = StackNavigator({
-  SignIn: { screen: SignInScreen },
-  Home: { screen: HomeScreen },
+    SignIn: { screen: SignInScreen },
+    Home: { screen: HomeScreen },
+    Calendar: { screen: CalendarScreen },
+    Suggestions: { screen: SuggestionsScreen },
+    Settings: { screen: SettingsScreen },
   }, {
     navigationOptions: {
       headerStyle: {

@@ -8,6 +8,6 @@
 
   "splash": {
     "image": "./images/logo.png",
-    "backgroundColor": "#FEF9B0",
+    "backgroundColor": "#FEF9B0"
   }
 }

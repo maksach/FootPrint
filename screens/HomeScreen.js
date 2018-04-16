@@ -1,47 +1,29 @@
 import React, { Component } from 'react';
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import Expo from 'expo';
-import { StackNavigator } from 'react-navigation';
+import { TabNavigator } from 'react-navigation';
 import * as firebase from 'firebase';
+import { TransportScreen } from './TransportScreen';
+import { FoodScreen } from './FoodScreen';
+import { ElectricityScreen } from './ElectricityScreen';
 // import { Input } from './components/Input';
 // import { Button } from './components/Button';
 
-export class HomeScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Home',
-  };
+const Tab = TabNavigator({
+    Transport: { screen: TransportScreen },
+    Food: { screen: FoodScreen },
+    Electricity: { screen: ElectricityScreen }
+  }, {
+    navigationOptions: {
+      headerStyle: {
+        // marginTop: Expo.Constants.statusBarHeight
+      }
+    }
+})
+
+export default class HomeScreen extends React.Component {
+
   render() {
-    const { navigate } = this.props.navigation;
-    return (
-      <View style = { styles.container }>
-        <Text>
-          Home
-        </Text>
-      </View>
-    );
+    return <Tab />;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'row',
-  },
-  form: {
-    flex: 1,
-  },
-  title: {
-    padding: 5,
-    paddingBottom: 0,
-    color: '#333',
-    fontSize: 35,
-    fontWeight: '700',
-    width: '100%',
-    textAlign: 'center',
-  },
-});
-
-export default HomeScreen;
