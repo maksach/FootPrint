@@ -1,5 +1,13 @@
 {
   "expo": {
-    "sdkVersion": "26.0.0"
+    "sdkVersion": "26.0.0",
+    "orientation": "portrait",
+    "name": "FootPrint",
+    "icon": "./images/logo.png",
+  },
+
+  "splash": {
+    "image": "./images/logo.png",
+    "backgroundColor": "#FEF9B0",
   }
 }
