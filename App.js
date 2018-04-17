@@ -17,13 +17,7 @@ const NavigationApp = StackNavigator({
     Calendar: { screen: CalendarScreen },
     Suggestions: { screen: SuggestionsScreen },
     Settings: { screen: SettingsScreen },
-  }, {
-    navigationOptions: {
-      headerStyle: {
-        // marginTop: Expo.Constants.statusBarHeight
-      }
-    }
-})
+  })
 
 export default class App extends React.Component {
 

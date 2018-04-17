@@ -14,8 +14,8 @@ export class SignInScreen extends React.Component {
   }
 
   static navigationOptions = {
-    title: 'Sign In',
-  };
+    header: null
+  }
 
   onPressSignIn() {
     console.log("pressed sign in");

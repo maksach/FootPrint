@@ -13,17 +13,20 @@ const Tab = TabNavigator({
     Transport: { screen: TransportScreen },
     Food: { screen: FoodScreen },
     Electricity: { screen: ElectricityScreen }
-  }, {
-    navigationOptions: {
-      headerStyle: {
-        // marginTop: Expo.Constants.statusBarHeight
-      }
-    }
-})
+  })
 
-export default class HomeScreen extends React.Component {
+export class HomeScreen extends React.Component {
+
+  static navigationOptions = {
+    headerTitleStyle: {
+      alignSelf: 'center'
+    },
+    title: 'FootPrint'
+  }
 
   render() {
     return <Tab />;
   }
 }
+
+export default HomeScreen;
